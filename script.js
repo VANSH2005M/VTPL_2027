@@ -33,7 +33,7 @@ const dow=D.toLocaleDateString('en-GB',{weekday:'long'}),mon=D.toLocaleDateStrin
 const long=`${dow}, ${D.getDate()} ${mon} ${D.getFullYear()}`;
 $('#bk1').textContent="VTPL 2027";
 $('#dow').textContent=CONFIG.dayRange;$('#dnum').innerHTML =
-  '<span style="display:inline-block;transform:translateY(4px)">8</span> · 9 · 10';$('#dmon').textContent=mon;$('#dyr').textContent=D.getFullYear();
+ '<span class="date-eight">8</span> · 9 · 10';$('#dmon').textContent=mon;$('#dyr').textContent=D.getFullYear();
 $('#dtime').textContent=CONFIG.timeLine;$('#dven').textContent=CONFIG.venueName;
 $('#see').textContent=`See you on ${D.getDate()}–${new Date(CONFIG.weddingEndDate+"T00:00:00").getDate()} ${mon} ${D.getFullYear()}`;
 $('#vn').textContent=$('#mv').textContent=CONFIG.venueName;$('#va').textContent=CONFIG.venueAddress;
