@@ -278,9 +278,9 @@ mu.onclick=async()=>{
   if (!curtain || !openLayer) return;
 
   const mapsURL =
-  "https://www.google.com/maps/dir/?api=1" +
-  "&destination=21.2199113,72.7672865" +
-  "&travelmode=driving";
+  "https://www.google.com/maps/search/?api=1" +
+  "&query=Valliba%20Sport%2C%20Surat" +
+  "&query_place_id=ChIJXal9SGRMDTkR3dv3JZn2HTQ";
 
   let revealed = false;
   let lastTap = 0;
