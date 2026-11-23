@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>VTPL 2027 – Vav Terapanth Premier League</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/canvas-confetti/1.9.3/confetti.browser.min.js"></script>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+<div id="petals"></div>
+<div class="bokeh" style="width:160px;height:160px;left:-40px;top:12%"></div>
+<div class="bokeh" style="width:200px;height:200px;right:-60px;top:55%;animation-delay:2s"></div>
+
+<button class="fab" id="th" aria-label="Switch to evening theme" title="Toggle theme"></button>
+<button class="fab" id="mu" aria-label="Play music" aria-pressed="false">
+  <i class="fa-solid fa-compact-disc vinyl-icon"></i>
+</button>
+<div id="toast" role="status"></div>
+
+<div id="intro">
+  <div class="intro-particles" aria-hidden="true">
+    <span>✦</span>
+    <span>🏏</span>
+    <span>✧</span>
+    <span>🏏</span>
+    <span>✦</span>
+    <span>✨</span>
+    <span>✧</span>
+    <span>✦</span>
+    <span>🏏</span>
+    <span>✨</span>
+  </div>
+  <div class="scene" id="scene" role="button" tabindex="0" aria-label="Open the wedding invitation">
+    <div class="book">
+      <div class="pg"></div>
+      <div class="inner"> <img src="ganpati-icon.png"
+       alt="Ganpati Icon"
+       class="book-ganpati-icon"></div>
+      <div class="cover">
+        <div class="face front">
+          <div class="emb"><img src="logo.webp" alt="VTPL 2027 logo"></div>
+          <div class="serif" style="font-style:italic;letter-spacing:.14em;font-size:1.05rem" id="bk1">NAVKAR GROUP</div>
+          <div style="font-size:8px;letter-spacing:.3em;color:#f2c9a0;font-style:italic">CRICKET TOURNAMENT</div>
+        </div>
+        <div class="face back"></div>
+      </div>
+    </div>
+  </div>
+  <div class="tap"><div class="dot"><i></i></div><div class="lab">Tap the book to open</div></div>
+</div>
+
+<svg width="0" height="0" style="position:absolute"><symbol id="gn" viewBox="0 0 48 48"><path d="M24 5l5 10h-10z"/><path d="M19 15c-9-2-14 6-10 14 3 5 8 3 9-2M29 15c9-2 14 6 10 14-3 5-8 3-9-2"/><path d="M24 15v26M21 41c0 3 6 3 6 0"/></symbol></svg>
+<main id="main">
+  <section class="hero" id="hero"><div class="arch"><div class="royal-silk" aria-hidden="true">
+  <span class="silk-wave wave-one"></span>
+  <span class="silk-wave wave-two"></span>
+  <span class="silk-wave wave-three"></span>
+</div>
+    <img class="hl r" src="logo.webp" alt="VTPL 2027 – Vav Terapanth Premier League" style="--d:.2s">
+    <div class="lab r" style="--d:.6s;margin-top:28px;font-size:22px">VTPL 2027</div>
+    <div class="serif r" style="--d:.9s;font-style:italic;font-size:1.2rem;line-height:1.6;margin-top:22px">We cordially invite you to witness<br>The grand celebration of cricket</div>
+    <div class="lab r" style="--d:.6s;margin-top:28px;font-size:10px">Where Passion Meets Cricket & Champions Rise!</div>
+    <div class="lab r" style="--d:.6s;margin-top:28px;font-size:17px">One Team. One Dream.</div>
+    <div class="lab r bnc" style="--d:1.8s;margin-top:auto;padding-top:20px;font-size:10px">Scroll to explore<br><span style="font-size:20px">⌄</span></div>
+  </div></section>
+  <section id="org">
+    <div class="lab" style="color:#b88a3c;opacity:1;font-size:10px;letter-spacing:.35em">Presented by</div>
+    <h2 style="letter-spacing:.06em;text-transform:uppercase;font-size:1.8rem;margin:10px 0 16px">The Organizers</h2>
+    <div style="width:90px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:0 auto 26px"></div>
+    <div class="oc">
+      <div class="serif" style="font-size:1.35rem;letter-spacing:.07em;text-transform:uppercase;color:var(--wine)">Navkar Group</div>
+      <div class="lab" style="color:#b88a3c;opacity:1;font-size:9px;margin:10px 0 18px;line-height:1.9">Vav Terapanth Premier League · 2027</div>
+      <p class="serif" style="font-style:italic;line-height:1.9;font-size:1.02rem;margin:0">Bringing together the finest cricketers in a celebration of sport, brotherhood, and the true spirit of the game. Three days. One trophy. Infinite memories.</p>
+      <img
+        src="navkar-group.png"
+        alt="Navkar Group Team"
+        class="navkar-group-photo"
+      >
+    </div>
+  </section>
+  <section id="save">
+    <div class="lab">Save the date</div>
+    <h2>Pull to Reveal</h2>
+    <div class="rod"></div>
+    <div class="paper" id="paper"><div>
+
+      <img src="ganpati-icon.png"
+          alt="Shree Ganesh"
+          class="reveal save-ganpati-icon"
+          data-t=".05">
+
+      <div class="lab reveal" data-t=".2" id="dow" style="margin-top:6px"></div>
+      <div class="serif num reveal" data-t=".35" id="dnum"></div>
+      <div class="serif reveal" data-t=".5" id="dmon" style="font-style:italic;font-size:1.6rem"></div>
+      <div class="lab reveal" data-t=".62" id="dyr" style="margin:6px 0 12px"></div>
+      <div class="reveal" data-t=".75" id="dtime" style="font-size:12px;opacity:.8"></div>
+      <div class="serif reveal" data-t=".88" id="dven" style="font-size:1.05rem;margin-top:6px"></div>
+    </div></div>
+    <div id="bottomWrap" role="slider" tabindex="0" aria-label="Pull down to reveal the tournament date" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+      <div class="rod shim"></div><div class="tassel"></div>
+    </div>
+    <div class="lab" id="hint" style="margin-top:96px;font-size:10px">Drag me down</div>
+    <p id="see" style="margin:26px 0 0;font-size:13px;background:var(--glass);display:inline-block;padding:6px 14px;border-radius:10px"></p>
+    <div class="cd" id="cd"></div>
+    <button class="btn" id="cal">📅 Add to calendar</button>
+  </section>
+
+  <section id="fest">
+    <div class="lab">Proudly Presents</div>
+    <h2>Our Sponsors</h2>
+    <!-- SPONSORS: Edit names below. Cards shuffle automatically in 3D. Main sponsor logo: sponsor-main.jpg -->
+    <!-- Replace sponsor-main.jpg to change the main sponsor logo. -->
+    <div id="sponsorViewport" class="sponsor-viewport" aria-label="Sponsors carousel">
+      <div id="sponsorTrack" class="sponsor-track">
+        <article class="sponsor-card sponsor-main">
+          <div class="sponsor-type">MAIN SPONSOR</div>
+          <div class="sponsor-photo"><img src="sponsor-main.jpg" alt="Shardaben Maftlal Mehta Parivar" onerror="this.style.display='none';this.parentElement.classList.add('no-photo')"></div>
+          <h3>SHARDABEN MAFTLAL MEHTA PARIVAR</h3>
+        </article>
+        <article class="sponsor-card sponsor-main">
+          <div class="sponsor-type">CO-SPONSOR-1</div>
+          <div class="sponsor-photo"><img src="co_sponsor.jpg" alt="Shardaben Maftlal Mehta Parivar" onerror="this.style.display='none';this.parentElement.classList.add('no-photo')"></div>
+          <h3>Dhudiben Vaghjibhai Mehta</h3></article>
+        <article class="sponsor-card sponsor-main">
+         <div class="sponsor-type">CO-SPONSOR-2</div>
+          <div class="sponsor-photo"><img src="co_sponsor.jpg" alt="Shardaben Maftlal Mehta Parivar" onerror="this.style.display='none';this.parentElement.classList.add('no-photo')"></div>
+          <h3>Monghiben Arvindbhai Mehta</h3></article>
+        <article class="sponsor-card sponsor-main">
+          <div class="sponsor-type">YOUTUBE LIVE</div>
+          <div class="sponsor-photo"><img src="youtube_logo.jpg" alt="Shardaben Maftlal Mehta Parivar" onerror="this.style.display='none';this.parentElement.classList.add('no-photo')"></div>
+          <h3>Vimlaben Kirtlal Mehta</h3></article>
+      </div>
+    </div>
+    <div class="dots" id="sponsorDots" aria-label="Sponsor position"></div>
+    <div class="sponsor-controls"><button class="ar" id="sponsorPrev" aria-label="Previous sponsor">‹</button><span class="lab" style="font-size:10px">Swipe to see sponsors</span><button class="ar" id="sponsorNext" aria-label="Next sponsor">›</button></div>
+  </section>
+
+  <section id="story">
+    <div class="lab">Moments</div>
+    <h2>Our Story</h2>
+    <!-- OUR STORY: Edit each data-caption and data-image directly in this HTML file.
+         Add your photos to the same folder, e.g. data-image="story1.jpg".
+         Add/remove story-item divs as needed. -->
+    <div id="storyItems" hidden>
+      <div class="story-item" data-caption="AADHYA INT ACES" data-emoji="🤍" data-image="" data-color1="#e9e4ee" data-color2="#c9bfd6"></div>
+      <div class="story-item" data-caption="Finance With CA Harsh" data-emoji="☕" data-image="" data-color1="#f6e0cf" data-color2="#e8b690"></div>
+      <div class="story-item" data-caption="GOLDEN XI" data-emoji="✨" data-image="" data-color1="#dfe6f5" data-color2="#a9b8e0"></div>
+      <div class="story-item" data-caption="JD ROYALS " data-emoji="💍" data-image="" data-color1="#fbe0e8" data-color2="#f2a7bb"></div>
+      <div class="story-item" data-caption="SITAYYA STARS" data-emoji="🌸" data-image="" data-color1="#e8f0dc" data-color2="#b9d19a"></div>
+      <div class="story-item" data-caption="DHURANDHAR XI" data-emoji="🌸" data-image="" data-color1="#e8f0dc" data-color2="#b9d19a"></div>
+      <div class="story-item" data-caption="AHEMDABAD AVENGERS" data-emoji="🌸" data-image="" data-color1="#e8f0dc" data-color2="#b9d19a"></div>
+      <div class="story-item" data-caption="SENTOMEN GROUP" data-emoji="🌸" data-image="" data-color1="#e8f0dc" data-color2="#b9d19a"></div>
+    </div>
+    <div id="vp2" style="overflow:hidden;touch-action:pan-y;margin:0 -20px;padding:10px 0 20px"><div id="tr2" style="display:flex;gap:14px;will-change:transform"></div></div>
+    <div class="dots" id="dots2"></div>
+    <div class="lab" style="font-size:10px">‹ › Swipe to see more</div>
+  </section>
+  
+  <section id="rec">
+    <div class="rc">
+      <span class="sp" style="left:22%;top:46%">✦</span><span class="sp" style="right:18%;top:36%;animation-delay:1s">✦</span>
+      <div class="lab" style="color:#f3c6a0;opacity:1;font-size:10px">You are invited to the</div>
+      <div class="serif" id="rt" style="font-size:2.1rem;color:#f9d9b0;margin:6px 0 14px"></div>
+      <div class="cheers-animation" aria-label="Cheers">
+
+    <svg class="single-glass left-glass"
+        viewBox="0 0 60 100" aria-hidden="true">
+      <path d="M12 10 H48 L43 44 Q30 61 17 44 Z"
+            fill="#f6d46b" fill-opacity=".65"
+            stroke="#fff0cb" stroke-width="3"/>
+      <path d="M17 25 H43 L40 43 Q30 53 20 43 Z"
+            fill="#ffcc52"/>
+      <path d="M30 56 V83 M15 88 H45"
+            fill="none" stroke="#fff0cb"
+            stroke-width="5" stroke-linecap="round"/>
+    </svg>
+
+    <svg class="single-glass right-glass"
+        viewBox="0 0 60 100" aria-hidden="true">
+      <path d="M12 10 H48 L43 44 Q30 61 17 44 Z"
+            fill="#f6d46b" fill-opacity=".65"
+            stroke="#fff0cb" stroke-width="3"/>
+      <path d="M17 25 H43 L40 43 Q30 53 20 43 Z"
+            fill="#ffcc52"/>
+      <path d="M30 56 V83 M15 88 H45"
+            fill="none" stroke="#fff0cb"
+            stroke-width="5" stroke-linecap="round"/>
+    </svg>
+
+    <span class="cheers-spark">✦</span>
+
+  </div>
+      <div class="serif" id="rd" style="font-size:1.45rem;font-weight:700;margin:16px 0 8px"></div>
+      <div id="rtm" style="font-size:13px;opacity:.9"></div>
+      <div id="rv" style="font-size:13px;margin-top:8px"></div>
+      <div class="pill" id="rdc"></div>
+    </div>
+  </section>
+  <section id="loc">
+    <div class="lab">Location</div>
+    <h2>How to Reach</h2>
+      <div class="map" id="map"
+      
+        style="width:100%;height:auto;overflow:hidden;border-radius:16px;">
+        
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.3009554580954!2d72.76241557926262!3d21.21991123014057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04c664809ac5d%3A0x341df699725fdbdd!2sValliba%20Sport!5e0!3m2!1sen!2sin!4v1795357777071!5m2!1sen!2sin"
+        width="100%"
+        height="350"
+        style="border:0;display:block;"
+        allowfullscreen
+        loading="lazy"
+        title="Valliba Sport Map">
+      </iframe>
+      <div class="map-curtain" id="mapCurtain">
+          <div class="curtain-left"></div>
+          <div class="curtain-right"></div>
+
+          <div class="curtain-message">
+            <span class="curtain-icon">✦</span>
+            <h3>VTPL 2027</h3>
+            <p>Tap to Reveal Location</p>
+            <span class="curtain-icon">✦</span>
+          </div>
+        </div>
+
+        <!-- Double tap to open Google Maps -->
+        <div class="map-open-layer" id="mapOpenLayer"
+            title="Double tap to open Google Maps">
+          <span>Double Tap to Open Maps ↗</span>
+        </div>
+
+    </div>
+    <div class="serif" style="font-size:13px" id="mv"></div>Tap to open in Maps</div>
+    </div>
+    <div class="serif" id="vn" style="font-size:1.5rem;margin:22px 0 6px;color:var(--wine)"></div>
+    <div id="va" style="font-size:13px;opacity:.75;line-height:1.6"></div>
+    <div style="display:flex;gap:10px;justify-content:center;margin-top:20px;flex-wrap:wrap">
+      <button class="btn f" id="dir">➤ Get directions</button><button class="btn" id="cp">Copy address</button>
+    </div>
+
+<!-- VTPL Social Media Buttons -->
+ <!-- Stay Connected Heading -->
+<div class="social-heading">
+  <div class="lab">STAY CONNECTED</div>
+  <h2>Join the VTPL Family</h2>
+  <p>One Team. One Dream. Let's Stay Connected!</p>
+</div>
+
+<div class="vtpl-socials">
+  <a href="https://www.instagram.com/vtpl_2027?vrfl=MWFlN2Ywem5tMDU3Yg=="
+     class="vtpl-social"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Instagram">
+    <i class="fa-brands fa-instagram"></i>
+    <span>Instagram</span>
+  </a>
+
+  <a href="https://chat.whatsapp.com/EExeVWQkSveLJP0ssH9XXV"
+     class="vtpl-social"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span>WhatsApp</span>
+  </a>
+
+</div>
+
+  </section>
+</main>
+
+
+<!-- VTPL COPYRIGHT FOOTER -->
+<footer class="vtpl-footer">
+  <div class="footer-divider"></div>
+
+  <p class="footer-copyright">
+    © 2027 VTPL · ALL RIGHTS RESERVED
+  </p>
+
+  <p class="footer-credit">
+  DESIGNED & DEVELOPED BY
+  <strong class="footer-name">VANSH MEHTA</strong>
+</p>
+</footer>
+
+
+<script src="script.js"></script>
+</body></html>
