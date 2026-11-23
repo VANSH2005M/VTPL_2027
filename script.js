@@ -307,7 +307,5 @@ mu.onclick=async()=>{
     }
   });
 
-  openLayer.addEventListener('dblclick', () => {
-    window.open(mapsURL, '_blank', 'noopener');
-  });
+
 })();
