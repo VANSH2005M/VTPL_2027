@@ -1362,4 +1362,14 @@ main#main {
     animation: none;
   }
 }
+.vtpl-social .social-svg {
+  display: block !important;
+  width: 27px !important;
+  height: 27px !important;
+  min-width: 27px;
+  flex-shrink: 0;
+  color: inherit;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
 
