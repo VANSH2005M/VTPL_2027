@@ -1372,4 +1372,19 @@ main#main {
   opacity: 1 !important;
   visibility: visible !important;
 }
+.vtpl-social .social-svg {
+  width: 27px !important;
+  height: 27px !important;
+  min-width: 27px !important;
+  max-width: 27px !important;
+  min-height: 27px !important;
+  max-height: 27px !important;
+  flex: 0 0 27px !important;
+  display: inline-block !important;
+  vertical-align: middle;
+}
 
+.vtpl-social svg {
+  width: 27px !important;
+  height: 27px !important;
+}
