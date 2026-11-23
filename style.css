@@ -1406,3 +1406,33 @@ main#main {
   flex: 0 0 27px !important;
   margin: 0 auto !important;
 }
+
+/* VTPL MOBILE LAG FIX */
+@media (max-width: 768px) {
+
+  .oc, .ec, .fab {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  .ec.dim {
+    filter: none !important;
+  }
+
+  .bokeh {
+    animation: none !important;
+  }
+
+  #petals .p:nth-child(n+7) {
+    display: none !important;
+  }
+
+  .scene, .book, .cover {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  .hero .silk-wave {
+    filter: blur(12px) !important;
+  }
+}
