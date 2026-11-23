@@ -10,7 +10,7 @@ const CONFIG={
   venueName:"Valiba Cricket Ground",
   venueAddress:"Valliba Sport, Surat, Gujarat, India",
   mapsUrl:"https://www.google.com/maps/search/?api=1&query=Valliba+Sport+Surat",   // paste your Google Maps share link here; if empty, a search on the address is used
-  musicUrl:"weeding1.mp3",
+  musicUrl:"Weeding1.mp3",
   events:[
     {name:"Ganesh Sthapana",icon:"🪔",when:"TUE · 9 FEB · 8:00 AM",venue:"Haveli Courtyard, Raj Vilas Palace",dress:"Traditional, saffron & cream",sw:["#f6a56b","#fbd3b0"],bg:["#f4975a","#fde0c8"]},
     {name:"Mata Puja",icon:"🙏",when:"TUE · 9 FEB · 6:00 PM",venue:"Haveli Courtyard, Raj Vilas Palace",dress:"Wear red or orange",sw:["#e8453c","#f7b267"],bg:["#e8453c","#f7b267"]},
