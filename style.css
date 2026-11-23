@@ -1467,8 +1467,10 @@ main#main {
 #loc .vtpl-socials .vtpl-social:active span {
   color: #FFF8F5 !important;
 }
-/* Pull to Reveal date alignment fix */
-#save #dnum {
-  font-variant-numeric: lining-nums;
-  font-feature-settings: "lnum" 1;
+/* Pull to Reveal - align only number 8 */
+#save #dnum .date-eight {
+  display: inline-block !important;
+  position: relative !important;
+  top: 6px !important;
+  transform: none !important;
 }
