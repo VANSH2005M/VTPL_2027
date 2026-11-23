@@ -50,12 +50,12 @@ setTheme('light');th.onclick=()=>setTheme(document.documentElement.dataset.theme
 /* book */
 const scene=$('#scene');let opened=false;
 function zoomPage(){const p=scene.querySelector('.inner').getBoundingClientRect(),s0=scene.getBoundingClientRect();
-  const cx=p.left+p.width/2,cy=p.top+p.height/2,k=Math.max(innerWidth/p.width,innerHeight/p.height)*1.04;
+  const cx=p.left+p.width/2,cy=p.top+p.height/2,k=Math.max(innerWidth/p.width,innerHeight/p.height)*1.01;
   scene.style.transformOrigin=`${cx-s0.left}px ${cy-s0.top}px`;
   scene.style.transform=`translate(${innerWidth/2-cx}px,${innerHeight/2-cy}px) scale(${k})`}
 function openBook(){if(opened)return;opened=true;$('#intro').classList.add('opening');document.documentElement.style.overflow='hidden';scene.classList.add('pre');
   setTimeout(()=>scene.classList.add('open'),RM?0:300);
-  setTimeout(()=>{scene.style.transition='transform 1.8s cubic-bezier(.65,0,.25,1)';zoomPage()},RM?50:2200);
+  setTimeout(()=>{scene.style.transition='transform 1.2s cubic-bezier(.65,0,.25,1)';zoomPage()},RM?50:2200);
   setTimeout(()=>{$('#intro').classList.add('gone');document.body.classList.add('go')},RM?100:3800);
   setTimeout(()=>{document.body.style.overflow='';document.documentElement.style.overflow='';scrollTo(0,0)},RM?150:4600)}
 document.body.style.overflow='hidden';
