@@ -1436,3 +1436,34 @@ main#main {
     filter: blur(12px) !important;
   }
 }
+/* VTPL INSTAGRAM & WHATSAPP HOVER FIX */
+
+#loc .vtpl-socials .vtpl-social:hover,
+#loc .vtpl-socials .vtpl-social:focus-visible {
+  background: #69112D !important;
+  color: #FFF8F5 !important;
+  border-color: #D8AD65 !important;
+  box-shadow: 0 8px 25px rgba(216,173,101,.5) !important;
+  animation-play-state: paused;
+}
+
+/* SVG icon aur text dono white honge */
+#loc .vtpl-socials .vtpl-social:hover svg,
+#loc .vtpl-socials .vtpl-social:hover span,
+#loc .vtpl-socials .vtpl-social:focus-visible svg,
+#loc .vtpl-socials .vtpl-social:focus-visible span {
+  color: #FFF8F5 !important;
+}
+
+/* Mobile par tap effect */
+#loc .vtpl-socials .vtpl-social:active {
+  background: #69112D !important;
+  color: #FFF8F5 !important;
+  transform: scale(.95) !important;
+  animation-play-state: paused;
+}
+
+#loc .vtpl-socials .vtpl-social:active svg,
+#loc .vtpl-socials .vtpl-social:active span {
+  color: #FFF8F5 !important;
+}
